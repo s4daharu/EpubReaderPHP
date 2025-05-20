@@ -1,0 +1,61 @@
+/* static/css/custom.css */
+
+/*
+  Base font size will be controlled by Tailwind utilities.
+  #chapter-content font size is also controlled by Tailwind (`text-base` or `text-lg` etc.).
+*/
+
+/* Custom Scrollbar Styling (for WebKit-based browsers) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(75, 85, 99, 0.5); /* gray-600 with opacity */
+  border-radius: 10px;
+}
+html.light ::-webkit-scrollbar-track {
+  background: rgba(209, 213, 219, 0.5); /* gray-300 with opacity */
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(107, 114, 128, 0.7); /* gray-500 with opacity */
+  border-radius: 10px;
+}
+html.light ::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.7); /* gray-400 with opacity */
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(156, 163, 175, 0.9); /* gray-400 with opacity */
+}
+html.light ::-webkit-scrollbar-thumb:hover {
+  background: rgba(107, 114, 128, 0.9); /* gray-500 with opacity */
+}
+
+
+/* Offcanvas Menu Width */
+#offcanvasMenu {
+  width: 24rem; /* 384px */
+}
+
+@media (max-width: 768px) { /* md breakpoint in Tailwind */
+  #offcanvasMenu {
+    width: 85%; /* More screen coverage on smaller mobiles */
+  }
+}
+@media (max-width: 480px) { /* Smaller mobiles */
+  #offcanvasMenu {
+    width: 100%;
+  }
+}
+
+/* Ensure file input button has consistent theming if Tailwind file: variants aren't enough */
+input[type="file"]::file-selector-button {
+  /* Tailwind handles this with file: pseudo-elements, this is a fallback/override if needed */
+  /* For example, if you want more specific colors not covered by Tailwind theme */
+  /* background-color: var(--file-button-bg, #4B5563); gray-600 */
+  /* color: var(--file-button-text, white); */
+}
+html.light input[type="file"]::file-selector-button {
+  /* background-color: var(--file-button-bg-light, #D1D5DB); gray-300 */
+  /* color: var(--file-button-text-light, #1F2937); gray-800 */
+}
